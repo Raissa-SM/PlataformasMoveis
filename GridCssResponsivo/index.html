@@ -35,9 +35,15 @@
     </header>
 
     <!-- Banner -->
-    <section class="banner">
-        <img src="images/banner.jpg" alt="Banner Livros" class="banner-img">
-    </section>
+<section class="banner">
+    <picture>
+        <!-- Se a tela tiver até 768px (Mobile/Tablet), carrega essa imagem: -->
+        <source media="(max-width: 768px)" srcset="images/banner-mobile.png">
+        
+        <!-- Caso contrário (Desktop), carrega a imagem normal: -->
+        <img src="images/banner.png" alt="Banner Livros" class="banner-img">
+    </picture>
+</section>
 
     <!-- Grid de Produtos -->
     <main class="grid-container">
