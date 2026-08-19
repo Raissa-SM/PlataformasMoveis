@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Livros</title>
+    <!-- Favicon adicionado -->
+    <link rel="icon" href="images/logo_favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="site-wrapper">
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo_favicon.png" alt="Logo Livraria" class="logo-img">
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar livro...">
+        </div>
+        
+        <!-- Controle do Menu Hambúrguer -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Sobre</a></li>
+                <!-- Redireciona para o ID do rodapé -->
+                <li><a href="#contato">Contato</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <img src="images/baner.jpg" alt="Banner Livros" class="banner-img">
+    </section>
+
+    <!-- Grid de Produtos -->
+    <main class="grid-container">
+        <!-- Livro 1 -->
+        <article class="card">
+            <img src="images/ACulpaEDasEstrelas.jpg" alt="A Culpa é das Estrelas" class="card-img">
+            <h3 class="product-title">A Culpa é das Estrelas</h3>
+            <p>John Green<br>Romance</p>
+        </article>
+        <!-- Livro 2 -->
+        <article class="card">
+            <img src="images/ASelecao.jpg" alt="A Seleção" class="card-img">
+            <h3 class="product-title">A Seleção</h3>
+            <p>Kiera Cass<br>Ficção Jovem</p>
+        </article>
+        <!-- Livro 3 -->
+        <article class="card">
+            <img src="images/BoxHarryPotter.jpg" alt="Box Harry Potter" class="card-img">
+            <h3 class="product-title">Box Harry Potter</h3>
+            <p>J.K. Rowling<br>Fantasia</p>
+        </article>
+        <!-- Livro 4 -->
+        <article class="card">
+            <img src="images/EspadaDeVidro.jpg" alt="Espada de Vidro" class="card-img">
+            <h3 class="product-title">Espada de Vidro</h3>
+            <p>Victoria Aveyard<br>Fantasia</p>
+        </article>
+        <!-- Livro 5 -->
+        <article class="card">
+            <img src="images/OHomemDeGiz.jpg" alt="O Homem de Giz" class="card-img">
+            <h3 class="product-title">O Homem de Giz</h3>
+            <p>C.J. Tudor<br>Suspense</p>
+        </article>
+        <!-- Livro 6 -->
+        <article class="card">
+            <img src="images/OPequenoPrincipe.jpg" alt="O Pequeno Príncipe" class="card-img">
+            <h3 class="product-title">O Pequeno Príncipe</h3>
+            <p>Antoine de Saint-Exupéry<br>Clássico</p>
+        </article>
+        <!-- Livro 7 -->
+        <article class="card">
+            <img src="images/Verity.jpg" alt="Verity" class="card-img">
+            <h3 class="product-title">Verity</h3>
+            <p>Colleen Hoover<br>Thriller</p>
+        </article>
+        <!-- Livro 8 -->
+        <article class="card">
+            <img src="images/TronoDeVidro.jpg" alt="Trono de Vidro" class="card-img">
+            <h3 class="product-title">Trono de Vidro</h3>
+            <p>Sarah J. Maas<br>Fantasia</p>
+        </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="footer">
+        <div class="footer-col">
+            <p>Livraria XYZ<br>Rua dos Livros, 123<br>Rio do Sul - SC</p>
+        </div>
+        <div class="footer-col center">
+            <p>(47) 99999-9999</p>
+        </div>
+        <div class="footer-col right">
+            <div class="social-icons">
+                <span>📘</span> <span>📸</span> <span>🐦</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Busca -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estrutura para empurrar o rodapé para o final da página */
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    flex: 1; /* Faz o main crescer e empurrar o footer */
+}
+
+/* ================================
+   1. Cabeçalho (Header)
+   ================================ */
+.header {
+    display: grid;
+    /* Grid Areas ajudam a reorganizar no mobile */
+    grid-template-areas: "logo search nav menu";
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #fff;
+    gap: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo { grid-area: logo; }
+.search-container { grid-area: search; }
+.nav { grid-area: nav; }
+.hamburger { grid-area: menu; }
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.search-container {
+    justify-self: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+}
+
+/* Menu Navegação Desktop */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #0056b3;
+}
+
+/* Hambúrguer escondido no Desktop */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+/* ================================
+   2. Banner
+   ================================ */
+.banner {
+    width: 100%;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    border-radius: 8px;
+}
+
+/* ================================
+   3. Main GRID - Produtos
+   ================================ */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 5% 40px 5%;
+}
+
+.card {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Mostra a capa do livro inteira */
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* ================================
+   4. Rodapé (Footer)
+   ================================ */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #444;
+    color: white;
+    padding: 30px 5%;
+    align-items: center;
+}
+
+.footer-col.center {
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer-col.right {
+    text-align: right;
+}
+
+.social-icons span {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================================
+   5. Media Queries (Responsividade)
+   ================================ */
+
+/* Tablet e Mobile (Até 768px) */
+@media (max-width: 768px) {
+    /* Reorganiza o cabeçalho para jogar a busca para a linha de baixo */
+    .header {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 
+            "logo menu"
+            "search search"
+            "nav nav";
+    }
+    
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .search-container {
+        justify-self: stretch;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Exibe o menu quando o checkbox for clicado */
+    .menu-toggle:checked ~ .nav {
+        display: block;
+    }
+
+    /* Produtos: 2 colunas */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Menor (Até 480px) */
+@media (max-width: 480px) {
+    /* Produtos: 1 coluna */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer: 1 coluna empilhada */
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-col.center, 
+    .footer-col.right {
+        text-align: center;
+    }
+}
