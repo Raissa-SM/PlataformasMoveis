@@ -185,7 +185,11 @@ main {
             "logo menu"
             "search search"
             "nav nav";
+        padding: 10px 5%;
+        gap: 5px;
     }
+
+    .logo { justify-self: center; }
     
     .hamburger {
         display: block;
