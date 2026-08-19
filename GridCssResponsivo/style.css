@@ -94,7 +94,7 @@ main {
 .banner-img {
     width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 350px;
     object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
     border-radius: 8px;
 }
@@ -104,9 +104,10 @@ main {
    ================================ */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 0 5% 40px 5%;
+    align-content: start;
 }
 
 .card {
@@ -127,7 +128,6 @@ main {
     height: 250px;
     object-fit: contain; /* Mostra a capa do livro inteira */
     margin-bottom: 15px;
-    background-color: #f9f9f9;
 }
 
 .card h3 {
@@ -151,6 +151,10 @@ main {
     color: white;
     padding: 30px 5%;
     align-items: center;
+}
+
+.footer-col.left {
+    text-align: left;
 }
 
 .footer-col.center {
@@ -226,15 +230,16 @@ main {
         grid-template-columns: 1fr;
     }
     
-    /* Footer: 1 coluna empilhada */
+    /* Footer: */
     .footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
     }
-    
-    .footer-col.center, 
-    .footer-col.right {
-        text-align: center;
+
+    .footer-col.left {
+        display: none;
+    }
+    .footer-col.center {
+        text-align: left;
     }
 }
